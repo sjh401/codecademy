@@ -1,8 +1,10 @@
 function statsFinder(array) {
     // Write your code here
     let sum = 0;
-    let mode;
     let obj = {};
+    let max = -1;
+    let maxArr = [];
+    let modeArr = [];
     for(let i=0;i<array.length; i+=1){
         sum += array[i]
         if(!obj[array[i]]){
@@ -11,9 +13,7 @@ function statsFinder(array) {
         obj[array[i]] +=1
         }
     }
-    let max = Math.max(...Object.values(obj))
-    let maxArr = [];
-    let modeArr = [];
+    max = Math.max(...Object.values(obj))
     Object.values(obj).forEach((element, index) => {
     if(element === max) {
         maxArr.push(index)
