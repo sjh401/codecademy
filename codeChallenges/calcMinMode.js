@@ -4,12 +4,12 @@ function statsFinder(array) {
     let mode;
     let obj = {};
     for(let i=0;i<array.length; i+=1){
-      sum += array[i]
-      if(!obj[array[i]]){
+        sum += array[i]
+        if(!obj[array[i]]){
         obj[array[i]] = 1
-      } else {
+        } else {
         obj[array[i]] +=1
-      }
+        }
     }
     let max = Math.max(...Object.values(obj))
     let maxArr = [];
@@ -19,10 +19,10 @@ function statsFinder(array) {
         maxArr.push(index)
     }})
     maxArr.map(element => {
-      modeArr.push(array.indexOf(parseInt(Object.keys(obj)[element])))
+        modeArr.push(array.indexOf(parseInt(Object.keys(obj)[element])))
     })
     modeArr.sort((a,b)=>a-b)
     return [sum/array.length, array[modeArr[0]]]
-  }
-  
-  console.log(statsFinder([500, 400, 400, 375, 300, 350, 325, 300]))
+}
+
+console.log(statsFinder([500, 400, 400, 375, 300, 350, 325, 300]))
